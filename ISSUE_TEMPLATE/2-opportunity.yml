@@ -1,0 +1,24 @@
+name: "2 · Opportunity"
+description: "Level 2 — a customer problem worth solving. Add it as a sub-issue of its Outcome."
+title: "OPP-<nn> · <customer problem in a few words>"
+type: Opportunity
+projects: ["SpendMend-PRoduct-SandBox/3"]
+
+body:
+  - type: markdown
+    attributes:
+      value: "Describe the **problem**, not a solution. After creating, add this issue as a sub-issue of its Outcome."
+  - type: textarea
+    id: problem
+    attributes: {label: Customer problem}
+    validations: {required: true}
+  - type: input
+    id: who
+    attributes: {label: Who has the problem, placeholder: "Requester, Buyer, AP Specialist…"}
+    validations: {required: true}
+  - type: input
+    id: impact
+    attributes: {label: Business impact, placeholder: "Maverick spend, cycle time…"}
+  - type: textarea
+    id: evidence
+    attributes: {label: Evidence, description: "Interviews, data, support tickets. Longer notes go in opportunities/<domain>/OPP-nn.md."}
