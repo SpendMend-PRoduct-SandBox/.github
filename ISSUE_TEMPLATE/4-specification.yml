@@ -1,0 +1,35 @@
+name: "4 · Specification"
+description: "Level 4 — points to a delivery-ready spec file. Add it as a sub-issue of its Experiment."
+title: "SPEC-<DOMAIN>-<nnn> · <title>"
+type: Specification
+projects: ["SpendMend-PRoduct-SandBox/3"]
+
+body:
+  - type: markdown
+    attributes:
+      value: "The spec itself lives in **product-context/specs/** and is changed only by PR. This issue tracks it."
+  - type: input
+    id: path
+    attributes: {label: Spec path, placeholder: specs/p2p/SPEC-P2P-001.md}
+    validations: {required: true}
+  - type: input
+    id: flag
+    attributes: {label: Feature flag, placeholder: purchasing.p2p.001}
+    validations: {required: true}
+  - type: input
+    id: lead
+    attributes: {label: Feature Lead, placeholder: "@handle"}
+    validations: {required: true}
+  - type: checkboxes
+    id: readiness
+    attributes:
+      label: Readiness checklist (all checked = move to Ready)
+      options:
+        - label: Parent experiment decision is Promote
+        - label: Product intent and problem are in business terms
+        - label: Business rules are complete and unambiguous
+        - label: Every acceptance test (AT-n) is Given / When / Then and automatable
+        - label: Out of scope, data entities and dependencies are listed
+        - label: Compliance and security constraints are stated
+        - label: Engineering has reviewed technical constraints
+        - label: Front matter status set to ready (spec-check passes)
