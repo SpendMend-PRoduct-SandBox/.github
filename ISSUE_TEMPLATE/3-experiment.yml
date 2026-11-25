@@ -1,0 +1,38 @@
+name: "3 · Experiment"
+description: "Level 3 — a testable solution hypothesis (replaces the Feature). Add it as a sub-issue of its Opportunity."
+title: "EXP-<nn> · <hypothesis in a few words>"
+type: Experiment
+projects: ["SpendMend-PRoduct-SandBox/3"]
+
+body:
+  - type: textarea
+    id: hypothesis
+    attributes: {label: Hypothesis, placeholder: "We believe <solution> will <change> for <who>."}
+    validations: {required: true}
+  - type: dropdown
+    id: risk
+    attributes:
+      label: Risk tier
+      description: "Low: flag and watch. Medium: prototype, then flagged pilot. High: pre-prod validation + Finance/Controls sign-off, then pilot."
+      options: [Low, Medium, High]
+    validations: {required: true}
+  - type: dropdown
+    id: method
+    attributes:
+      label: Validation method
+      options: [Prototype demo, Pre-prod validation, Production experiment, Shadow mode]
+    validations: {required: true}
+  - type: input
+    id: signal
+    attributes: {label: Success signal, placeholder: "≥ 4 of 5 complete a request unaided"}
+    validations: {required: true}
+  - type: input
+    id: prototype
+    attributes: {label: Prototype link, description: "proto-* repo or preview URL (fill in when it exists)."}
+  - type: dropdown
+    id: decision
+    attributes:
+      label: Decision
+      description: "Record the decision in experiments/<domain>/EXP-nn.md before closing."
+      options: [Pending, Promote, Pivot, Kill]
+      default: 0
