@@ -1,0 +1,36 @@
+name: "1 · Outcome"
+description: "Level 1 — a strategic outcome with metrics and guardrails (replaces the Epic)."
+title: "OUT-<DOMAIN> · <outcome name>"
+type: Outcome
+projects: ["SpendMend-PRoduct-SandBox/3"]
+
+body:
+  - type: markdown
+    attributes:
+      value: "Open Outcomes in **product-context**. Also add `outcomes/OUT-<DOMAIN>.md` by PR. IDs never change."
+  - type: input
+    id: outcome_id
+    attributes: {label: Outcome ID, placeholder: OUT-P2P}
+    validations: {required: true}
+  - type: textarea
+    id: statement
+    attributes: {label: Outcome statement, description: What changes for the business when this succeeds?}
+    validations: {required: true}
+  - type: textarea
+    id: metrics
+    attributes:
+      label: Outcome metrics
+      value: |
+        | Metric | Baseline | Target |
+        | --- | --- | --- |
+        |  |  |  |
+    validations: {required: true}
+  - type: textarea
+    id: guardrails
+    attributes: {label: Guardrails, description: Rules that apply to every spec under this outcome (SoD, audit, PHI, SOX).}
+  - type: input
+    id: owners
+    attributes: {label: Owners, placeholder: "Product: @handle · Engineering: @handle · Sponsor: name"}
+  - type: input
+    id: file
+    attributes: {label: Outcome file, placeholder: outcomes/OUT-P2P.md}
